@@ -19,8 +19,6 @@ func _input(event: InputEvent) -> void:
         var attack_direction: Vector2 = global_position.direction_to(get_global_mouse_position())
         attack(attack_direction)
 
-        print(level_curve.sample_baked(70))
-
 func get_xp(xp: float) -> void:
 
     experience += xp
