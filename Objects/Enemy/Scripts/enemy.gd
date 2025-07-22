@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void: state_action[state].call()
 
-func _idle() -> void: pass
+func _idle() -> void: move(Vector2.ZERO)
 
 func _following() -> void:
 
@@ -27,7 +27,7 @@ func _following() -> void:
 
 		var direction: Vector2 = global_position.direction_to(player.global_position)
 		move(direction)
-		if global_position.distance_to(player.global_position) < 180: state = STATES.ATTACKING
+		if global_position.distance_to(player.global_position) < 70: state = STATES.ATTACKING
 
 func _attacking() -> void:
 
@@ -36,7 +36,7 @@ func _attacking() -> void:
 		var direction: Vector2 = global_position.direction_to(player.global_position)
 		attack(direction)
 
-		if global_position.distance_to(player.global_position) > 180: state = STATES.FOLLOWING
+		if global_position.distance_to(player.global_position) > 70: state = STATES.FOLLOWING
 
 func _on_body_entered(body: Node2D) -> void:
 
