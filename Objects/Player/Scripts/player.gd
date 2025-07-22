@@ -1,5 +1,9 @@
 class_name Player extends Actor
 
+@export var level_curve: Curve
+var level: int = 0
+var experience: float = 0
+
 var looking_direction: Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
@@ -14,3 +18,12 @@ func _input(event: InputEvent) -> void:
 
         var attack_direction: Vector2 = global_position.direction_to(get_global_mouse_position())
         attack(attack_direction)
+
+        print(level_curve.sample_baked(70))
+
+func get_xp(xp: float) -> void:
+
+    experience += xp
+    if experience > level_curve.sample_baked(level):
+
+        level += 1

@@ -19,6 +19,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void: state_action[state].call()
 
+func _die() -> void:
+
+	player.get_xp(5)
+	queue_free()
+
 func _idle() -> void: move(Vector2.ZERO)
 
 func _following() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bws7xxpby6gh0"]
+[gd_scene load_steps=33 format=3 uid="uid://bws7xxpby6gh0"]
 
 [ext_resource type="Script" uid="uid://b5glxvg0ocpop" path="res://Objects/Player/Scripts/player.gd" id="1_156m4"]
 [ext_resource type="Texture2D" uid="uid://4xpcdy5xvfsu" path="res://Assets/Units/Blue Units/Warrior/Warrior_Attack1.png" id="2_u7612"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cyug4stt22b04" path="res://Assets/Units/Blue Units/Warrior/Warrior_Run.png" id="3_o1rty"]
 [ext_resource type="Texture2D" uid="uid://d1t576fnl7e68" path="res://Assets/Units/Blue Units/Warrior/Warrior_Attack2.png" id="4_bpp7x"]
 [ext_resource type="Texture2D" uid="uid://cpgu4fov3x3y8" path="res://Assets/Units/Blue Units/Warrior/Warrior_Idle.png" id="4_o1rty"]
+
+[sub_resource type="Curve" id="Curve_u7612"]
+_limits = [0.0, 10000.0, 0.0, 100.0]
+_data = [Vector2(0, 10), 0.0, 28.6054, 0, 0, Vector2(46, 1400), 33.3521, 33.3521, 0, 0, Vector2(75, 3250), 103.936, 103.936, 0, 0, Vector2(100, 10000), 458.541, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7vp5"]
 atlas = ExtResource("2_u7612")
@@ -196,6 +201,7 @@ radius = 48.0104
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("attack_area", "sprites") groups=["Player"]]
 collision_mask = 18
 script = ExtResource("1_156m4")
+level_curve = SubResource("Curve_u7612")
 speed = 5.0
 attack_area = NodePath("AttackArea")
 sprites = NodePath("AnimatedSprite2D")
