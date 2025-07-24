@@ -8,7 +8,7 @@ func _ready() -> void:
 	parent = get_parent()
 	collision_layer = 0
 	collision_mask = parent.collision_mask
-	body_entered.connect(_on_body_entred)
+	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 func hit() -> void: 
@@ -17,7 +17,7 @@ func hit() -> void:
 
 		targets[target].get_damage(parent.strength)
 
-func _on_body_entred(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 
 	if body is Actor: targets[body.name] = body
 
