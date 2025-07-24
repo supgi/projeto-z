@@ -1489,6 +1489,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(-1, 0)
 polygon = PackedVector2Array(75, 736, 131, 473, 632, 470, 634, 383, 959, 376, 952, 258, 637, 257, 632, 166, 130, 166, 129, 577, -195, 704, -159, -71, 1388, -91, 1242, 778)
 
 [node name="SortY" type="Node2D" parent="."]
@@ -1497,8 +1498,8 @@ y_sort_enabled = true
 [node name="Player" parent="SortY" instance=ExtResource("13_2p253")]
 position = Vector2(272, 378)
 strength = 1.0
+can_die = false
 
 [node name="Enemy" parent="SortY" instance=ExtResource("14_c75pk")]
 position = Vector2(846, 321)
-agressive = true
 health = 10.0
