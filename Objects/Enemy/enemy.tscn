@@ -166,10 +166,15 @@ radius = 199.09
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_mpms8")
+agressive = true
 detection_area = NodePath("DetectionArea")
+strength = 1.0
 speed = 2.0
+cooldown = 0.8
 attack_area = NodePath("AttackArea")
+health = 5.0
 sprites = NodePath("AnimatedSprite2D")
+quantity = 1.0
 metadata/_custom_type_script = "uid://dpbkv0e0cwfxj"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -10,7 +10,7 @@ var player: Player
 enum STATES{IDLE, FOLLOWING, ATTACKING, PATROLLING}
 var state_action: Array = [_idle, _following, _attacking]
 
-func _ready() -> void: 
+func _ready() -> void:
 	
 	player = get_tree().get_first_node_in_group("Player")
 	detection_area.body_entered.connect(_on_body_entered)
@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void: state_action[state].call()
 
 func _die() -> void:
 
+	_drop()
 	player.get_xp(5)
 	queue_free()
 
