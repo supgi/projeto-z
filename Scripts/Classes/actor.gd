@@ -1,7 +1,7 @@
 class_name Actor extends Entity
 
-@export var speed: float = 0
 @export var strength: float = 0
+@export var speed: float = 0
 @export var cooldown: float = .5
 var cooldown_timer: Timer
 @export var attack_area: AttackArea
@@ -14,7 +14,6 @@ func _init() -> void:
 	#region timer configuration 
 
 	var new_timer: Timer = Timer.new()
-	new_timer.wait_time = cooldown
 	new_timer.timeout.connect(_cooldown_timer_end)
 	cooldown_timer = new_timer
 	add_child(new_timer)
@@ -46,7 +45,7 @@ func attack(direction: Vector2) -> void:
 	if can_attack:
 
 		can_attack = false
-		cooldown_timer.start()
+		cooldown_timer.start(cooldown)
 
 		_set_animation("attack")
 		if direction.x: sprites.flip_h = direction.x < 0
