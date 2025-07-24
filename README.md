@@ -24,7 +24,9 @@ Para gerenciar as interações físicas no jogo, as seguintes camadas de colisã
 
 - **Layer 1**: Jogador
 - **Layer 2**: Inimigo
+- **Layer 3**: Item
 - **Layer 5**: Paredes e outros elementos estáticos do cenário
+- **Layer 5**: Baús, portas, bancadas e tudo que é interativo
 
 ### Como baixar
 
